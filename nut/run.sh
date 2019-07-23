@@ -34,8 +34,8 @@ if [ "$UPS" -gt "0" ]; then
         echo "  port = $PORT"	  >> /etc/nut/ups.conf
 	echo "  vendorid = $VENDORID"     >> /etc/nut/ups.conf
 	echo "  productid = $PRODUCTID"   >> /etc/nut/ups.conf
-	echo "  descr = $DESC           >> /etc/nut/ups.conf
-        echo ""                   >> /etc/nut/ups.conf
+	echo "  descr = $DESC"            >> /etc/nut/ups.conf
+        echo ""                           >> /etc/nut/ups.conf
     done
 fi
 
