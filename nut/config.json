@@ -18,11 +18,11 @@
       { "username": "nut", "password": "nut", "instcmds": "all" }
     ],
     "ups": [
-      { "upsname": "ups", "driver": "usbhid-ups", "port": "auto" }
+      { "upsname": "Tecnoware ERA 1100", "driver": "blazer_usb", "port": "auto" }
     ],
     "bindaddr": "0.0.0.0",
     "bindport": "3493",
-    "mode": "netserver"
+    "mode": "standalone"
   },
   "schema": {
     "logins": [
