@@ -26,14 +26,14 @@ if [ "$UPS" -gt "0" ]; then
         UPSNAME=$(jq --raw-output ".ups[$i].upsname" $CONFIG_PATH)
         DRIVER=$(jq --raw-output ".ups[$i].driver" $CONFIG_PATH)
         PORT=$(jq --raw-output ".ups[$i].port" $CONFIG_PATH)
-        VENDOR=$(jq --raw-output ".ups[$i].vendor" $CONFIG_PATH)
-        PRODUCT=$(jq --raw-output ".ups[$i].driver" $CONFIG_PATH)
+        VENDORID=$(jq --raw-output ".ups[$i].vendorid" $CONFIG_PATH)
+        PRODUCTID=$(jq --raw-output ".ups[$i].productid" $CONFIG_PATH)
 	DESC=$(jq --raw-output ".ups[$i].desc" $CONFIG_PATH)
 	echo "[$UPSNAME]"         >> /etc/nut/ups.conf
         echo "  driver = $DRIVER" >> /etc/nut/ups.conf
         echo "  port = $PORT"	  >> /etc/nut/ups.conf
-	echo "  vendorid = $VENDOR"     >> /etc/nut/ups.conf
-	echo "  productid = $PRODUCT"   >> /etc/nut/ups.conf
+	echo "  vendorid = $VENDORID"     >> /etc/nut/ups.conf
+	echo "  productid = $PRODUCTID"   >> /etc/nut/ups.conf
 	echo "  descr = $DESC           >> /etc/nut/ups.conf
         echo ""                   >> /etc/nut/ups.conf
     done
