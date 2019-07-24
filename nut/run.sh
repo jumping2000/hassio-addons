@@ -20,6 +20,7 @@ fi
 
 # Generate ups.conf
 POLLINTERVAL=$(jq --raw-output ".pollinterval | length" $CONFIG_PATH)
+RUNTIMECAL=$(jq --raw-output ".runtimecal | length" $CONFIG_PATH)
 UPS=$(jq --raw-output ".ups | length" $CONFIG_PATH)
 echo "" > /etc/nut/ups.conf
 #if [ "$POLLINTERVAL" -gt "0" ]; then
@@ -33,11 +34,16 @@ if [ "$UPS" -gt "0" ]; then
         VENDORID=$(jq --raw-output ".ups[$i].vendorid" $CONFIG_PATH)
         PRODUCTID=$(jq --raw-output ".ups[$i].productid" $CONFIG_PATH)
 	DESC=$(jq --raw-output ".ups[$i].desc" $CONFIG_PATH)
+	RUNTIME1=$(jq --raw-output ".runtimecal[$i].runtime1" $CONFIG_PATH)
+	POWER1=$(jq --raw-output ".runtimecal[$i].power1" $CONFIG_PATH)
+	RUNTIME2=$(jq --raw-output ".runtimecal[$i].runtime2" $CONFIG_PATH)
+	POWER2=$(jq --raw-output ".runtimecal[$i].power2" $CONFIG_PATH)
 	echo "[$UPSNAME]"         >> /etc/nut/ups.conf
         echo "  driver = $DRIVER" >> /etc/nut/ups.conf
         echo "  port = $PORT"	  >> /etc/nut/ups.conf
 	echo "  vendorid = $VENDORID"     >> /etc/nut/ups.conf
 	echo "  productid = $PRODUCTID"   >> /etc/nut/ups.conf
+	echo "  runtimecal = $RUNTIME1,$POWER1,$RUNTIME2,$POWER2" >> /etc/nut/ups.conf
 	echo "  desc = $DESC"             >> /etc/nut/ups.conf
         echo ""                           >> /etc/nut/ups.conf
     done
