@@ -17,9 +17,12 @@
     "logins": [
       { "username": "nut", "password": "nut", "instcmds": "all" }
     ],
-    "pollinterval": "2",
+    "pollinterval": 2,
+    "runtimecal": [
+      { "runtime1": 420, "power1": 100, "runtime2": 900, "power2": 50 }
+    ],
     "ups": [
-      { "upsname": "tecnoware", "driver": "blazer_usb", "port": "auto", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA" }
+      { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA 1100" }
     ],
     "bindaddr": "0.0.0.0",
     "bindport": "3493",
@@ -30,8 +33,11 @@
       { "username": "str", "password": "str", "instcmds": "str" }
     ],
     "pollinterval": "int",
+    "runtimecal": [
+      { "runtime1": "int", "power1": "int", "runtime2": "int", "power2": "int" }
+    ],
     "ups": [
-      { "upsname": "str", "driver": "str", "port": "str", "vendorid": "str", "productid": "str", "desc": "str"}
+      { "upsname": "str", "driver": "str", "port": "str", "vendorid": "str", "productid": "str", "desc": "str" }
     ],
     "bindaddr": "str",
     "bindport": "port",
