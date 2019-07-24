@@ -2,17 +2,25 @@
 
 [Network UPS Tools](http://networkupstools.org/) can be used to control and manage several power devices like [Uninterruptible Power Supplies](https://en.wikipedia.org/wiki/Uninterruptible_power_supply). This [Hass.io](https://home-assistant.io/hassio/) plugin provides the nessecary daemon to make use of the [Home Assistant NUT Sensor](https://home-assistant.io/components/sensor.nut/).
 
-The default configuration should work with any [usbhid-ups](http://networkupstools.org/docs/man/usbhid-ups.html) compatible UPS. They can be added to `configuration.yaml` by adding:
+The default configuration was adapted to work with Tecnoware ERA UPS which uses the [blazer_usb](https://networkupstools.org/docs/man/blazer_usb.html) driver. The UPS sensors can be added to `configuration.yaml` by adding:
 
 
 ```
-sensor
+sensor:
   - platform: nut
-    username: nut
-    password: nut
+    name: "Tecnoware UPS"
+    host: IP_ADDRESS
+    port: 3493
+    username: USER
+    password: PWD
     resources:
+      - battery.charge
+      - battery.runtime
+      - battery.voltage
       - ups.load
-      - ups.status
+      - ups.status.display
+      - input.voltage
+      - output.voltage
       [...]
 
 
