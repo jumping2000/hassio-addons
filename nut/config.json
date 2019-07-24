@@ -17,6 +17,9 @@
     "logins": [
       { "username": "nut", "password": "nut", "instcmds": "all" }
     ],
+    "global_ups":[
+      { "pollinterval": "2" }
+    ],
     "ups": [
       { "upsname": "tecnoware", "driver": "blazer_usb", "port": "auto", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA" }
     ],
@@ -27,6 +30,9 @@
   "schema": {
     "logins": [
       { "username": "str", "password": "str", "instcmds": "str" }
+    ],
+    "global_ups":[
+      { "pollinterval": "int" }
     ],
     "ups": [
       { "upsname": "str", "driver": "str", "port": "str", "vendorid": "str", "productid": "str", "desc": "str"}
