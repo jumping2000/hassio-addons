@@ -17,7 +17,7 @@
     "logins": [
       { "username": "nut", "password": "nut", "instcmds": "all" }
     ],
-    pollinterval": "2",
+    "pollinterval": "2",
     "ups": [
       { "upsname": "tecnoware", "driver": "blazer_usb", "port": "auto", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA" }
     ],
