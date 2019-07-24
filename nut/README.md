@@ -2,7 +2,7 @@
 
 [Network UPS Tools](http://networkupstools.org/) can be used to control and manage several power devices like [Uninterruptible Power Supplies](https://en.wikipedia.org/wiki/Uninterruptible_power_supply). This [Hass.io](https://home-assistant.io/hassio/) plugin provides the nessecary daemon to make use of the [Home Assistant NUT Sensor](https://home-assistant.io/components/sensor.nut/).
 
-The default configuration was adapted to work with Tecnoware ERA UPS which uses the [blazer_usb](https://networkupstools.org/docs/man/blazer_usb.html) driver. The UPS sensors can be added to `configuration.yaml` by adding:
+The default configuration was adapted to work with Tecnoware ERA+ UPS which uses the [blazer_usb](https://networkupstools.org/docs/man/blazer_usb.html) driver. The UPS sensors can be added to `configuration.yaml` by adding:
 
 
 ```
@@ -26,6 +26,7 @@ sensor:
 
 
 ```
+The addon configuration uses runtimecalc parameter to calculate runtime estimation. This takes two runtimes at different loads. Typically, this uses the runtime at full load and the runtime at half load. For instance, if your UPS has a rated runtime of 240 seconds at full load and 720 seconds at half load, you would enter: 240,100,720,50
 
 The resources vary depending on your UPS vendor/model.
 
