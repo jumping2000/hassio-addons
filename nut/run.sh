@@ -19,8 +19,12 @@ if [ "$LOGINS" -gt "0" ]; then
 fi
 
 # Generate ups.conf
+POLLINTERVAL=$(jq --raw-output ".pollinterval | length" $CONFIG_PATH)
 UPS=$(jq --raw-output ".ups | length" $CONFIG_PATH)
 echo "" > /etc/nut/ups.conf
+if [ "$POLLINTERVAL" -gt "0" ]; then
+    echo "  pollinterval = $POLLINTERVAL" >> /etc/nut/ups.conf
+fi
 if [ "$UPS" -gt "0" ]; then
     for (( i=0; i < "$LOGINS"; i++ )); do
         UPSNAME=$(jq --raw-output ".ups[$i].upsname" $CONFIG_PATH)
