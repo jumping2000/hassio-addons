@@ -19,7 +19,7 @@
     ],
     "pollinterval": 2,
     "runtimecal": [
-      { "runtime1": 420, "power1": 100, "runtime2": 900, "power2": 50 }
+      { "runtime1": 420, "power1": 100, "runtime2": 800, "power2": 50 }
     ],
     "ups": [
       { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA 1100" }
