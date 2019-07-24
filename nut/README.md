@@ -21,6 +21,7 @@ sensor:
       - ups.status.display
       - input.voltage
       - output.voltage
+      - input.frequency
       [...]
 
 
