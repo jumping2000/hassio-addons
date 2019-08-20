@@ -1,6 +1,6 @@
 ## Network UPS Tools for Hass.io
 
-[Network UPS Tools](http://networkupstools.org/) can be used to control and manage several power devices like [Uninterruptible Power Supplies](https://en.wikipedia.org/wiki/Uninterruptible_power_supply). This [Hass.io](https://home-assistant.io/hassio/) plugin provides the nessecary daemon to make use of the [Home Assistant NUT Sensor](https://home-assistant.io/components/sensor.nut/).
+[Network UPS Tools](http://networkupstools.org/) can be used to control and manage several power devices like [Uninterruptible Power Supplies](https://en.wikipedia.org/wiki/Uninterruptible_power_supply). This [Hass.io](https://home-assistant.io/hassio/) plugin provides the necessary daemon to make use of the [Home Assistant NUT Sensor](https://home-assistant.io/components/sensor.nut/).
 
 The default configuration was adapted to work with Tecnoware ERA+ UPS which uses the [blazer_usb](https://networkupstools.org/docs/man/blazer_usb.html) driver. The UPS sensors can be added to `configuration.yaml` by adding:
 
