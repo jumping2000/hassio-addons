@@ -12,8 +12,8 @@ ENV \
 COPY rootfs /
 
 # Setup base
-RUN apk add --no-cache \
-    coreutils=8.31-r0 \
+#RUN apk add --no-cache \
+RUN apk add nut jq --update-cache \
     
 # Build arguments
 ARG BUILD_ARCH
