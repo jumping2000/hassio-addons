@@ -4,8 +4,8 @@ FROM ${BUILD_FROM}
 
 # Environment variables
 ENV \
-    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    S6_CMD_WAIT_FOR_SERVICES=1 \
+#    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
+#    S6_CMD_WAIT_FOR_SERVICES=1 \
     TERM="xterm-256color"
 
 # Copy root filesystem
