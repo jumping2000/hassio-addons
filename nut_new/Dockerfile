@@ -12,9 +12,14 @@ ENV \
 COPY rootfs /
 
 # Setup base
-#RUN apk add --no-cache \
-RUN apk add nut jq --update-cache \
-    
+#RUN apk add nut jq --update-cache \
+
+# Setup base
+RUN apk add --no-cache \
+    coreutils=8.31-r0 \
+    wget=1.20.3-r0 \
+    nut jq --update-cache
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
