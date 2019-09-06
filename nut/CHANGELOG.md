@@ -2,8 +2,8 @@
 
 ## 1.1
 
-- Added build.json to addon configuration
-- Added some ups.conf parameters
+- Several changes in addon building
+- Added some ups.conf parameters in Nut app
 
 ## 1.0
 
