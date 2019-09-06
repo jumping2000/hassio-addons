@@ -19,7 +19,7 @@ if [ "$LOGINS" -gt "0" ]; then
 fi
 
 # Generate ups.conf
-POLLINTERVAL=$(jq --raw-output ".pollinterval | length" $CONFIG_PATH)
+BATTERY=$(jq --raw-output ".battery | length" $CONFIG_PATH)
 RUNTIMECAL=$(jq --raw-output ".runtimecal | length" $CONFIG_PATH)
 UPS=$(jq --raw-output ".ups | length" $CONFIG_PATH)
 echo "" > /etc/nut/ups.conf
@@ -34,6 +34,9 @@ if [ "$UPS" -gt "0" ]; then
         VENDORID=$(jq --raw-output ".ups[$i].vendorid" $CONFIG_PATH)
         PRODUCTID=$(jq --raw-output ".ups[$i].productid" $CONFIG_PATH)
 	DESC=$(jq --raw-output ".ups[$i].desc" $CONFIG_PATH)
+	BATTVOLTHIGH==(jq --raw-output ".battery[$i].battery_voltage_high" $CONFIG_PATH)
+	BATTVOLTLOW==(jq --raw-output ".battery[$i].battery_voltage_low" $CONFIG_PATH)
+	CHARGETIME==(jq --raw-output ".battery[$i].chargetime" $CONFIG_PATH)
 	RUNTIME1=$(jq --raw-output ".runtimecal[$i].runtime1" $CONFIG_PATH)
 	POWER1=$(jq --raw-output ".runtimecal[$i].power1" $CONFIG_PATH)
 	RUNTIME2=$(jq --raw-output ".runtimecal[$i].runtime2" $CONFIG_PATH)
@@ -43,6 +46,9 @@ if [ "$UPS" -gt "0" ]; then
         echo "  port = $PORT"	  >> /etc/nut/ups.conf
 	echo "  vendorid = $VENDORID"     >> /etc/nut/ups.conf
 	echo "  productid = $PRODUCTID"   >> /etc/nut/ups.conf
+	echo "  default.battery.voltage.high = $BATTVOLTHIGH"   >> /etc/nut/ups.conf
+	echo "  default.battery.voltage.low = $BATTVOLTLOW"   >> /etc/nut/ups.conf
+	echo "  chargetime = $CHARGETIME"   >> /etc/nut/ups.conf
 	echo "  runtimecal = $RUNTIME1,$POWER1,$RUNTIME2,$POWER2" >> /etc/nut/ups.conf
 	echo "  desc = $DESC"             >> /etc/nut/ups.conf
         echo ""                           >> /etc/nut/ups.conf
