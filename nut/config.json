@@ -1,6 +1,6 @@
 {
   "name": "Network UPS Tools",
-  "version": "0.2",
+  "version": "0.3",
   "slug": "nut",
   "description": "Manage Uninterruptible Power Supplies",
   "arch": [
@@ -17,7 +17,9 @@
     "logins": [
       { "username": "nut", "password": "nut", "instcmds": "all" }
     ],
-    "pollinterval": 2,
+    "battery": [
+      { "battery voltage high": 13.0, "battery voltage low": 10,4, "charge time": 43200 }
+    ],
     "runtimecal": [
       { "runtime1": 420, "power1": 100, "runtime2": 800, "power2": 50 }
     ],
@@ -32,7 +34,9 @@
     "logins": [
       { "username": "str", "password": "str", "instcmds": "str" }
     ],
-    "pollinterval": "int",
+    "battery": [
+      { "battery voltage high": "float", "battery voltage low": "float", "charge time": "int" }
+    ],
     "runtimecal": [
       { "runtime1": "int", "power1": "int", "runtime2": "int", "power2": "int" }
     ],
