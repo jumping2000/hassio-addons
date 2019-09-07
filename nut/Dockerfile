@@ -1,9 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV \ 
-    LANG C.UTF-8 \
-    TERM="xterm-256color"
+ENV LANG C.UTF-8
 
 RUN echo "http://nl.alpinelinux.org/alpine/edge/main/" >> /etc/apk/repositories
 RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
