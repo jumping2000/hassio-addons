@@ -42,7 +42,7 @@ if [ "$UPS" -gt "0" ]; then
 	DESC=$(jq --raw-output ".ups[$i].desc" $CONFIG_PATH)
 	BATTVOLTHIGH=$(jq --raw-output ".battery[$i].battery_voltage_high" $CONFIG_PATH)
 	BATTVOLTLOW=$(jq --raw-output ".battery[$i].battery_voltage_low" $CONFIG_PATH)
-	CHARGETIME=$(jq --raw-output ".battery[$i].chargetime" $CONFIG_PATH)
+	CHARGETIME=$(jq --raw-output ".battery[$i].charge_time" $CONFIG_PATH)
 	RUNTIME1=$(jq --raw-output ".runtimecal[$i].runtime1" $CONFIG_PATH)
 	POWER1=$(jq --raw-output ".runtimecal[$i].power1" $CONFIG_PATH)
 	RUNTIME2=$(jq --raw-output ".runtimecal[$i].runtime2" $CONFIG_PATH)
