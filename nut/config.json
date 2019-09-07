@@ -36,7 +36,7 @@
       { "battery_voltage_high": "float?", "battery_voltage_low": "float?", "charge_time": "int?" }
     ],
     "runtimecal": [
-      { "runtime1": "int?", "power1": "int?", "runtime2": "int?", "power2": "int?" }
+      { "runtime1": "int", "power1": "int", "runtime2": "int", "power2": "int" }
     ],
     "ups": [
       { "upsname": "str", "driver": "str", "port": "str", "vendorid": "str?", "productid": "str?", "desc": "str" }
