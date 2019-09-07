@@ -3,9 +3,13 @@ set -e
 
 CONFIG_PATH=/data/options.json
 
+WAIT_PIDS=()
+NAME=
+
 # Generate upsd.users
 echo "[INFO] Generate upsd.users"
 LOGINS=$(jq --raw-output ".logins | length" $CONFIG_PATH)
+
 echo "" > /etc/nut/upsd.users
 if [ "$LOGINS" -gt "0" ]; then
     for (( i=0; i < "$LOGINS"; i++ )); do
@@ -77,3 +81,16 @@ chmod 777 /dev/bus/usb/*/*
 echo "[INFO] running NUT..."
 upsdrvctl start
 upsd -D
+
+WAIT_PIDS+=($!)
+# Register stop
+function stop_nut() {
+    echo "[INFO] Kill Processes..."
+    kill -15 "${WAIT_PIDS[@]}"
+    wait "${WAIT_PIDS[@]}"
+    echo "Done."
+}
+trap "stop_nut" SIGTERM SIGHUP
+
+# Wait until all is done
+wait "${WAIT_PIDS[@]}"
