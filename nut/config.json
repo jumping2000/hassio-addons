@@ -16,13 +16,13 @@
       { "username": "username", "password": "password", "instcmds": "all" }
     ],
     "battery": [
-      { "battery_voltage_high": 13.0, "battery_voltage_low": 10.4, "charge_time": 43200 }
+      { "battery_voltage_high": 13.0, "battery_voltage_low": 10.4, "charge_time": 43200, "idle_load": 10 }
     ],
     "runtimecal": [
-      { "runtime1": 460, "power1": 100, "runtime2": 880, "power2": 50 }
+      { "runtime1": 460, "power1": 100, "runtime2": 980, "power2": 50 }
     ],
     "ups": [
-      { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA 1100" }
+      { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "protocol": "mustek", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA 1100" }
     ],
     "bindaddr": "0.0.0.0",
     "bindport": "3493",
@@ -33,13 +33,13 @@
       { "username": "str", "password": "str", "instcmds": "str" }
     ],
     "battery": [
-      { "battery_voltage_high": "float?", "battery_voltage_low": "float?", "charge_time": "int?" }
+      { "battery_voltage_high": "float?", "battery_voltage_low": "float?", "charge_time": "int?", "idle_load": "float?" }
     ],
     "runtimecal": [
       { "runtime1": "int", "power1": "int", "runtime2": "int", "power2": "int" }
     ],
     "ups": [
-      { "upsname": "str", "driver": "str", "port": "str", "vendorid": "str?", "productid": "str?", "desc": "str" }
+      { "upsname": "str", "driver": "str", "port": "str", "protocol": "str?", "vendorid": "str?", "productid": "str?", "desc": "str" }
     ],
     "bindaddr": "str",
     "bindport": "port",
