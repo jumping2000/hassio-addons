@@ -4,6 +4,7 @@ set -e
 CONFIG_PATH=/data/options.json
 
 # Generate upsd.users
+echo "[INFO] Generate upsd.users"
 LOGINS=$(jq --raw-output ".logins | length" $CONFIG_PATH)
 echo "" > /etc/nut/upsd.users
 if [ "$LOGINS" -gt "0" ]; then
@@ -19,6 +20,7 @@ if [ "$LOGINS" -gt "0" ]; then
 fi
 
 # Generate ups.conf
+echo "[INFO] Generate ups.conf"
 BATTERY=$(jq --raw-output ".battery | length" $CONFIG_PATH)
 RUNTIMECAL=$(jq --raw-output ".runtimecal | length" $CONFIG_PATH)
 UPS=$(jq --raw-output ".ups | length" $CONFIG_PATH)
@@ -56,11 +58,13 @@ if [ "$UPS" -gt "0" ]; then
 fi
 
 # Generate upsd.conf
+echo "[INFO] Generate upsd.conf"
 BINDADDR=$(jq --raw-output ".bindaddr" $CONFIG_PATH)
 BINDPORT=$(jq --raw-output ".bindport" $CONFIG_PATH)
 echo "LISTEN $BINDADDR $BINDPORT" > /etc/nut/upsd.conf
 
 # Generate nut.conf
+echo "[INFO] Generate nut.conf"
 MODE=$(jq --raw-output ".mode" $CONFIG_PATH)
 echo "MODE=$MODE" > /etc/nut/nut.conf
 
@@ -70,5 +74,6 @@ chmod 660 /etc/nut/*
 # grant access to all usb devices
 chmod 777 /dev/bus/usb/*/*
 
+echo "[INFO] Start NUT"
 upsdrvctl start
 upsd -D
