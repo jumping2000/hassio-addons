@@ -47,16 +47,26 @@ if [ "$UPS" -gt "0" ]; then
 	POWER1=$(jq --raw-output ".runtimecal[$i].power1" $CONFIG_PATH)
 	RUNTIME2=$(jq --raw-output ".runtimecal[$i].runtime2" $CONFIG_PATH)
 	POWER2=$(jq --raw-output ".runtimecal[$i].power2" $CONFIG_PATH)
-	echo "[$UPSNAME]"         >> /etc/nut/ups.conf
+        echo "[$UPSNAME]"         >> /etc/nut/ups.conf
         echo "  driver = $DRIVER" >> /etc/nut/ups.conf
         echo "  port = $PORT"	  >> /etc/nut/ups.conf
-	echo "  vendorid = $VENDORID"     >> /etc/nut/ups.conf
-	echo "  productid = $PRODUCTID"   >> /etc/nut/ups.conf
-	echo "  default.battery.voltage.high = $BATTVOLTHIGH"   >> /etc/nut/ups.conf
-	echo "  default.battery.voltage.low = $BATTVOLTLOW"   >> /etc/nut/ups.conf
-	echo "  chargetime = $CHARGETIME"   >> /etc/nut/ups.conf
-	echo "  runtimecal = $RUNTIME1,$POWER1,$RUNTIME2,$POWER2" >> /etc/nut/ups.conf
-	echo "  desc = $DESC"             >> /etc/nut/ups.conf
+        if [ "$VENDORID" -gt "0" ]; then
+            echo "  vendorid = $VENDORID"     >> /etc/nut/ups.conf
+        fi
+        if [ "$PRODUCTID" -gt "0" ]; then
+            echo "  productid = $PRODUCTID"   >> /etc/nut/ups.conf
+        fi
+        if [ "$BATTVOLTHIGH" -gt "0" ]; then
+            echo "  default.battery.voltage.high = $BATTVOLTHIGH"     >> /etc/nut/ups.conf
+        fi
+        if [ "$BATTVOLTLOW" -gt "0" ]; then
+            echo "  default.battery.voltage.low = $BATTVOLTLOW"   >> /etc/nut/ups.conf
+        fi        
+        if [ "$CHARGETIME" -gt "0" ]; then
+            echo "  chargetime = $CHARGETIME"   >> /etc/nut/ups.conf
+        fi 
+        echo "  runtimecal = $RUNTIME1,$POWER1,$RUNTIME2,$POWER2" >> /etc/nut/ups.conf
+        echo "  desc = $DESC"             >> /etc/nut/ups.conf
         echo ""                           >> /etc/nut/ups.conf
     done
 fi
