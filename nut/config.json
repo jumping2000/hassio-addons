@@ -16,7 +16,7 @@
       { "username": "username", "password": "password", "instcmds": "all" }
     ],
     "battery": [
-      { "battery_voltage_high": 13.0, "battery_voltage_low": 10.4, "charge time": 43200 }
+      { "battery_voltage_high": 13.0, "battery_voltage_low": 10.4, "charge_time": 43200 }
     ],
     "runtimecal": [
       { "runtime1": 460, "power1": 100, "runtime2": 880, "power2": 50 }
@@ -33,7 +33,7 @@
       { "username": "str", "password": "str", "instcmds": "str" }
     ],
     "battery": [
-      { "battery voltage high": "float?", "battery voltage low": "float?", "charge time": "int?" }
+      { "battery_voltage_high": "float?", "battery_voltage_low": "float?", "charge_time": "int?" }
     ],
     "runtimecal": [
       { "runtime1": "int?", "power1": "int?", "runtime2": "int?", "power2": "int?" }
