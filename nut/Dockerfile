@@ -1,8 +1,5 @@
-#ARG BUILD_FROM
-#FROM $BUILD_FROM
-ARG BUILD_FROM=hassioaddons/base:4.1.1
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 ENV \ 
     LANG C.UTF-8 \
@@ -11,6 +8,7 @@ ENV \
 RUN echo "http://nl.alpinelinux.org/alpine/edge/main/" >> /etc/apk/repositories
 RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 #RUN apk add nut jq --update-cache
+
 # Setup base
 RUN apk add --no-cache \
     nut=2.7.4-r6 \
