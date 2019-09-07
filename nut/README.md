@@ -32,9 +32,10 @@ The addon configuration uses some parameters to calculate runtime estimation and
 This takes two runtimes at different loads. Typically, this uses the runtime at full load and the runtime at half load. For instance, if your UPS has a rated runtime of 240 seconds at full load and 720 seconds at half load, you would enter: 240,100,720,50
 
 **Battery Charge**\
-battery voltage high: Maximum battery voltage that is reached after about 12 to 24 hours charging.\
-battery voltage low: Minimum battery voltage just before the UPS automatically shuts down.\
-chargetime: The time needed to fully recharge the battery after being fully discharged. If not specified, the driver defaults to 43200 seconds (12 hours)
+`battery voltage high`: Maximum battery voltage that is reached after about 12 to 24 hours charging.\
+`battery voltage low`: Minimum battery voltage just before the UPS automatically shuts down.\
+`charge time`: The time needed to fully recharge the battery after being fully discharged. If not specified, the driver defaults to 43200 seconds (12 hours)\
+`idle load`: Minimum battery load used by the driver to estimate the runtime. If not specified, the driver defaults to 10%
 
 `--> The resources vary depending on your UPS vendor/model <--`
 
