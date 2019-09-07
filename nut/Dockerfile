@@ -8,8 +8,8 @@ ENV \
     LANG C.UTF-8 \
     TERM="xterm-256color"
 
-#RUN echo "http://nl.alpinelinux.org/alpine/edge/main/" >> /etc/apk/repositories
-#RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
+RUN echo "http://nl.alpinelinux.org/alpine/edge/main/" >> /etc/apk/repositories
+RUN echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 #RUN apk add nut jq --update-cache
 # Setup base
 RUN apk add --no-cache \
