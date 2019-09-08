@@ -47,6 +47,6 @@ This takes two runtimes at different loads. Typically, this uses the runtime at 
 `user_id`: Optional: used to identify the UPS.
 
 
-## --> VERY IMPORTANT: If the UPS is not recognized, try to unplug and plug the USB cable <--**
+## VERY IMPORTANT: If the UPS is not recognized, try to unplug and plug the USB cable
 
 All supported USB UPS should work using one of the [USB drivers](http://networkupstools.org/stable-hcl.html) as well. Due to the lack of hardware some code changes might be neccessary in order to get serial or network UPS connections to work. Requests, feedback and pull request are welcome.
