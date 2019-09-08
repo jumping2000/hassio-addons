@@ -35,7 +35,7 @@ This takes two runtimes at different loads. Typically, this uses the runtime at 
 `battery_voltage_high`: Optional. Maximum battery voltage that is reached after about 12 to 24 hours charging.\
 `battery_voltage_low`: Optional. Minimum battery voltage just before the UPS automatically shuts down.\
 `charge_time`: Optional. The time needed to fully recharge the battery after being fully discharged. If not specified, the driver defaults to 43200 seconds (12 hours).\
-`idle_load`: Oprional. Minimum battery load used by the driver to estimate the runtime. If not specified, the driver defaults to 10%
+`idle_load`: Optional. Minimum battery load used by the driver to estimate the runtime. If not specified, the driver defaults to 10%
 
 **UPS Parameter**\
 `upsname`: Required. Name for configuration section.\
@@ -44,9 +44,9 @@ This takes two runtimes at different loads. Typically, this uses the runtime at 
 `protocol`: Optional. Skip autodetection of the protocol to use and only use the one specified. Supported values megatec, megatec/old, mustek and zinto.\
 `desc`: Optional. This allows you to set a brief description that upsd will provide to clients that ask for a list of connected equipment.\
 `vendor_id`: Optional: used to identify the UPS.\
-`user_id`: Optional: used to identify the UPS.\
+`user_id`: Optional: used to identify the UPS.
 
 
-**--> VERY IMPORTANT: If the UPS is not recognized try to unplug and plug the USB cable <--**
+**--> VERY IMPORTANT: If the UPS is not recognized, try to unplug and plug the USB cable <--**
 
 All supported USB UPS should work using one of the [USB drivers](http://networkupstools.org/stable-hcl.html) as well. Due to the lack of hardware some code changes might be neccessary in order to get serial or network UPS connections to work. Requests, feedback and pull request are welcome.
