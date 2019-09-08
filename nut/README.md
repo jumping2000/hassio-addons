@@ -38,7 +38,7 @@ This takes two runtimes at different loads. Typically, this uses the runtime at 
 `idle_load`: Oprional. Minimum battery load used by the driver to estimate the runtime. If not specified, the driver defaults to 10%
 
 **UPS Parameter**\
-`upsname`: Rrequired. UPS section\
+`upsname`: Required. Name for configuration section.\
 `driver"`: Required. This specifies which program will be monitoring this UPS. You need to specify the one that is compatible with your hardware. For Tecnoware ERA+ 1100 the driver used is blazer_usb (Driver for Megatec/Q1 protocol USB based UPS equipment).\
 `port`: Required. This is the serial port where the UPS is connected.\
 `protocol`: Optional. Skip autodetection of the protocol to use and only use the one specified. Supported values megatec, megatec/old, mustek and zinto.\
