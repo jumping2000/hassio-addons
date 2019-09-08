@@ -1,7 +1,7 @@
 {
   "name": "Network UPS Tools",
   "version": "1.1.0",
-  "slug": "jumping-nut",
+  "slug": "jumping_nut",
   "description": "Manage Uninterruptible Power Supplies",
   "url": "https://github.com/jumping2000/hassio-addons/tree/master/nut",
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
