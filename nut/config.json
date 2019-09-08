@@ -15,14 +15,12 @@
     "logins": [
       { "username": "username", "password": "password", "instcmds": "all" }
     ],
-    "battery": [
-      { "battery_voltage_high": 13.0, "battery_voltage_low": 10.4, "charge_time": 43200, "idle_load": 10 }
-    ],
+    "battery": [],
     "runtimecal": [
       { "runtime1": 460, "power1": 100, "runtime2": 980, "power2": 50 }
     ],
     "ups": [
-      { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "protocol": "mustek", "vendorid": "0665", "productid": "5161", "desc": "Tecnoware ERA 1100" }
+      { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "protocol": "mustek", "desc": "Tecnoware ERA 1100" }
     ],
     "bindaddr": "0.0.0.0",
     "bindport": "3493",
