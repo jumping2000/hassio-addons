@@ -20,7 +20,7 @@
       { "runtime1": 460, "power1": 100, "runtime2": 980, "power2": 50 }
     ],
     "ups": [
-      { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "protocol": "mustek", "desc": "Tecnoware ERA 1100" }
+      { "upsname": "tecnoware1100", "driver": "blazer_usb", "port": "auto", "desc": "Tecnoware ERA 1100" }
     ],
     "bindaddr": "0.0.0.0",
     "bindport": "3493",
