@@ -25,7 +25,7 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Jumping>" \
+    maintainer="Jumping" \
     org.label-schema.description="Network UPS Tools for Hass.io" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Addon NUT for ${BUILD_ARCH}" \
