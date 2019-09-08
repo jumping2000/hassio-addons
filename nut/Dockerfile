@@ -30,7 +30,7 @@ LABEL \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Addon NUT for ${BUILD_ARCH}" \
     org.label-schema.schema-version="1.1.0" \
-    org.label-schema.url="https://github.com/jumping2000/hassio-addons" \
+    org.label-schema.url="https://github.com/jumping2000/hassio-addons/tree/master/nut" \
     org.label-schema.usage="https://github.com/jumping2000/hassio-addons/blob/master/nut/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/jumping2000/hassio-addons/tree/master/nut" \
